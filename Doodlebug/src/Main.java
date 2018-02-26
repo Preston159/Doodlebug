@@ -75,12 +75,12 @@ public class Main {
 		for(int i = 0; i < 100; i++) {
 			randInt = (int)(Math.random()*20);
 			randIntTwo = (int)(Math.random()*20);
-			board[randInt][randIntTwo] = new Ant(randInt,randIntTwo);
+			board[randInt][randIntTwo] = new Ant(randInt, randIntTwo);
 		}
 		for(int i = 0; i < 5; i++) {
 			randInt = (int)(Math.random()*20);
 			randIntTwo = (int)(Math.random()*20);
-			board[randInt][randIntTwo] = new Doodlebug(randInt,randIntTwo);
+			board[randInt][randIntTwo] = new Doodlebug(randInt, randIntTwo);
 		}
 	}
 	
