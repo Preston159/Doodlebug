@@ -10,7 +10,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		placeBugs();
-		displayBoard();
+		
 		
 	}
 	
@@ -59,23 +59,23 @@ public class Main {
 		int randInt;
 		int randIntTwo;
 		int counter = 0;
-		do {
+		
+		for(int i = 0; i < 100; i++) {
 			randInt = (int)(Math.random()*20);
 			randIntTwo = (int)(Math.random()*20);
-			if(randInt%2==0) {
-				board[randInt][randIntTwo] = new Doodlebug(randInt,randInt);
-			}
-			else {
-				board[randIntTwo][randInt] = new Ant(randInt,randInt);
-			}
-			counter++;
-			
+			board[randIntTwo][randInt] = new Ant(randInt,randInt);
 		}
-		while(randInt!=10 && counter < 15);
-			
+		for(int i = 0; i < 5; i++) {
+			randInt = (int)(Math.random()*20);
+			randIntTwo = (int)(Math.random()*20);
+			board[randInt][randIntTwo] = new Doodlebug(randInt,randInt);
+		}
 		
 		
 		
+		
+		
+		displayBoard();
 	}
 	
 }
