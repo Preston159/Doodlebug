@@ -9,8 +9,6 @@ public abstract class Organism {
 	public abstract void setY(int y);
 	
 	@Override
-	public String toString() {
-		return "OR";
-	}
+	public abstract String toString();
 	
 }

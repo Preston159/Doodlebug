@@ -42,6 +42,11 @@ public class Ant extends Organism {
 		}
 	}
 	
+	@Override
+	public String toString() {
+		return "o";
+	}
+	
 	public int getX() { return x; }
 	public int getY() { return y; }
 	

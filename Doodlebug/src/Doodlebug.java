@@ -38,6 +38,11 @@ public class Doodlebug extends Organism {
 		
 	}
 	
+	@Override
+	public String toString() {
+		return "X";
+	}
+	
 	public int getX() { return x; }
 	public int getY() { return y; }
 	

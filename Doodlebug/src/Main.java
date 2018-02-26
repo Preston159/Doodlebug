@@ -19,7 +19,11 @@ public class Main {
 	public static void displayBoard() {
 		for(Organism[] r : board) {
 			for(Organism c : r) {
-				System.out.print(c);
+				if(c == null) {
+					System.out.print(" ");
+				} else {
+					System.out.print(c);
+				}
 			}
 			System.out.println();
 		}
