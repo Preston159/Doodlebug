@@ -34,6 +34,9 @@ public class Ant extends Organism {
 		for(int[] l : locations) {
 			int nx = x + l[0];
 			int ny = y + l[1];
+			if(!Main.isInBoard(nx, ny)) {
+				continue;
+			}
 			if(Main.board[nx][ny] == null) {
 				Main.board[nx][ny] = new Ant(nx, ny);
 				break;
