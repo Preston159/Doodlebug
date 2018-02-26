@@ -1,5 +1,5 @@
 
-public class Doodlebug {
+public class Doodlebug extends Organism {
 	
 	
 	
