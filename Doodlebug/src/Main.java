@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Main {
 	
 	static Organism[][] board = new Organism[20][];
@@ -11,22 +9,23 @@ public class Main {
 	
 	public static void main(String[] args) {
 		placeBugs();
-		Scanner in = new Scanner(System.in);
 		do {
 			displayBoard();
-			step();
-		} while(in.nextLine().equals(""));
-		in.close();
+		} while(step());
 	}
 	
-	public static void step() {
+	public static boolean step() {
+		int ants = 0;
 		for(Organism[] oa : board) {
 			for(Organism o : oa) {
 				if(o == null)
 					continue;
+				if(o instanceof Ant)
+					ants++;
 				o.move();
 			}
 		}
+		return ants != 0;
 	}
 	
 	public static void displayBoard() {
