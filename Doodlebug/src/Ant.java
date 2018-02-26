@@ -10,7 +10,14 @@ public class Ant extends Organism {
 
 	@Override
 	public void move() {
-		
+		int[] direction = Main.getDirection();
+		int nx = x + direction[0];
+		int ny = y + direction[1];
+		Organism o = Main.board[nx][ny];
+		if(o == null) {
+			x = nx;
+			y = ny;
+		}
 	}
 
 	@Override
