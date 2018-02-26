@@ -9,7 +9,9 @@ public class Main {
 	}
 	
 	public static void main(String[] args) {
+		placeBugs();
 		displayBoard();
+		
 	}
 	
 	public static void step() {
@@ -20,7 +22,7 @@ public class Main {
 		for(Organism[] r : board) {
 			for(Organism c : r) {
 				if(c == null) {
-					System.out.print(" ");
+					System.out.print("_ ");
 				} else {
 					System.out.print(c);
 				}
@@ -51,6 +53,29 @@ public class Main {
 		o.setX(tx);
 		o.setY(ty);
 		board[tx][ty] = o;
+	}
+	
+	public static void placeBugs() {
+		int randInt;
+		int randIntTwo;
+		int counter = 0;
+		do {
+			randInt = (int)(Math.random()*20);
+			randIntTwo = (int)(Math.random()*20);
+			if(randInt%2==0) {
+				board[randInt][randIntTwo] = new Doodlebug(randInt,randInt);
+			}
+			else {
+				board[randIntTwo][randInt] = new Ant(randInt,randInt);
+			}
+			counter++;
+			
+		}
+		while(randInt!=10 && counter < 15);
+			
+		
+		
+		
 	}
 	
 }

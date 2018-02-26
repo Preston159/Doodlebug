@@ -2,10 +2,12 @@
 public class Doodlebug extends Organism {
 	
 	private int x, y;
+	private int steps;
 	
 	public Doodlebug(int x, int y) {
 		this.x = x;
 		this.y = y;
+		this.steps = 0;
 	}
 	
 	@Override
@@ -31,11 +33,26 @@ public class Doodlebug extends Organism {
 		else {
 			Main.moveOrganism(x, y, nx, ny);
 		}
+		
+		this.steps++;
 	}
 	
 	@Override
 	public void breed() {
-		
+		int[][] locations = new int[][] {
+				new int[] { -1, 0 },
+				new int[] { 1, 0 },
+				new int[] { 0, -1 },
+				new int[] { 0, 1}
+		};
+		for(int[] l : locations) {
+			int nx = x + l[0];
+			int ny = y + l[1];
+			if(Main.board[nx][ny] == null) {
+				Main.board[nx][ny] = new Doodlebug(nx, ny);
+				break;
+			}
+		}
 	}
 	
 	@Override
