@@ -25,4 +25,19 @@ public class Main {
 		}
 	}
 	
+	public static int[] getDirection() {
+		int dir = (int) (Math.random() * 4);
+		switch(dir) {
+		case 0:
+			return new int[] {-1, 0};
+		case 1:
+			return new int[] {1, 0};
+		case 2:
+			return new int[] {0, -1};
+		case 3:
+			return new int[] {0, 1};
+		default: return null;
+		}
+	}
+	
 }
