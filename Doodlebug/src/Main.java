@@ -39,7 +39,7 @@ public class Main {
 		for(Organism[] r : board) {
 			for(Organism c : r) {
 				if(c == null) {
-					System.out.print("_");
+					System.out.print(" ");
 				} else {
 					System.out.print(c);
 				}
