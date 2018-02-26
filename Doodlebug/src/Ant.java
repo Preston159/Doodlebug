@@ -1,5 +1,5 @@
 
-public class Ant {
+public class Ant extends Organism {
 	
 	
 	
