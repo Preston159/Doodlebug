@@ -14,9 +14,10 @@ public class Ant extends Organism {
 		int[] direction = Main.getDirection();
 		int nx = x + direction[0];
 		int ny = y + direction[1];
-		Organism o = Main.board[nx][ny];
-		if(o == null && nx >= 0 && nx < 20 && ny >= 0 && ny < 20) {
-			Main.moveOrganism(x, y, nx, ny);
+		if(Main.isInBoard(nx, ny)) {
+			Organism o = Main.board[nx][ny];
+			if(o != null)
+				Main.moveOrganism(x, y, nx, ny);
 		}
 		if(age++ % 3 == 0) {
 			breed();
