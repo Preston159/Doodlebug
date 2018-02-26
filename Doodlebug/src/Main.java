@@ -65,8 +65,6 @@ public class Main {
 	
 	public static void moveOrganism(int fx, int fy, int tx, int ty) {
 		Organism o = board[fx][fy];
-		assert o.getX() == fx && o.getY() == fy;
-		assert isInBoard(fx, fy) && isInBoard(tx, ty);
 		o.setX(tx);
 		o.setY(ty);
 		board[tx][ty] = o;
