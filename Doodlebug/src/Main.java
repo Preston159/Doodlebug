@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
 	
 	static Organism[][] board = new Organism[20][];
@@ -8,10 +10,15 @@ public class Main {
 	}
 	
 	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
 		placeBugs();
 		do {
 			displayBoard();
-		} while(step());
+			if(!step())
+				break;
+			System.out.println("Press enter to continue");
+		} while(in.nextLine().equals(""));
+		in.close();
 	}
 	
 	public static boolean step() {
