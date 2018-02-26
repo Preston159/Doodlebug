@@ -27,7 +27,7 @@ public class Doodlebug extends Organism {
 		else if(Main.isInBoard(this.x, this.y - 1) && Main.board[this.x][this.y - 1] instanceof Ant){
 			Main.moveOrganism(x, y, x, y - 1);
 		}
-		else {
+		else if(Main.isInBoard(nx, ny)) {
 			Main.moveOrganism(x, y, nx, ny);
 		}
 		
