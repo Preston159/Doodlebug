@@ -47,7 +47,7 @@ public class Doodlebug extends Organism {
 		for(int[] l : locations) {
 			int nx = x + l[0];
 			int ny = y + l[1];
-			if(Main.board[nx][ny] == null) {
+			if(Main.isInBoard(nx, ny) && Main.board[nx][ny] == null) {
 				Main.board[nx][ny] = new Doodlebug(nx, ny);
 				break;
 			}
