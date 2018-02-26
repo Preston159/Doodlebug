@@ -23,7 +23,7 @@ public class Main {
 		for(Organism[] r : board) {
 			for(Organism c : r) {
 				if(c == null) {
-					System.out.print("_ ");
+					System.out.print("_");
 				} else {
 					System.out.print(c);
 				}
@@ -69,7 +69,7 @@ public class Main {
 		for(int i = 0; i < 5; i++) {
 			randInt = (int)(Math.random()*20);
 			randIntTwo = (int)(Math.random()*20);
-			board[randInt][randIntTwo] = new Doodlebug(randInt,randInt);
+			board[randInt][randIntTwo] = new Doodlebug(randInt,randIntTwo);
 		}
 		
 		
