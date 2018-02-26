@@ -2,12 +2,11 @@
 public class Doodlebug extends Organism {
 	
 	private int x, y;
-	private int steps;
+	private int age = 0;
 	
 	public Doodlebug(int x, int y) {
 		this.x = x;
 		this.y = y;
-		this.steps = 0;
 	}
 	
 	@Override
@@ -34,7 +33,7 @@ public class Doodlebug extends Organism {
 			Main.moveOrganism(x, y, nx, ny);
 		}
 		
-		this.steps++;
+		age++;
 	}
 	
 	@Override

@@ -2,7 +2,7 @@
 public class Ant extends Organism {
 	
 	private int x, y;
-	private int alive = 0;
+	private int age = 0;
 	
 	public Ant(int x, int y) {
 		this.x = x;
@@ -18,9 +18,8 @@ public class Ant extends Organism {
 		if(o == null && nx >= 0 && nx < 20 && ny >= 0 && ny < 20) {
 			Main.moveOrganism(x, y, nx, ny);
 		}
-		if(alive++ >= 3) {
+		if(age++ % 3 == 0) {
 			breed();
-			alive = 0;
 		}
 	}
 
