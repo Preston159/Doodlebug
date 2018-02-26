@@ -14,19 +14,17 @@ public class Doodlebug extends Organism {
 		int[] direction = Main.getDirection();
 		int nx = this.x + direction[0];
 		int ny = this.y + direction[1];
-		if(nx-1 < 0 || nx+1 > 19 || ny-1 < 0 || ny+1 > 19) {
-			
-		}
-		else if(Main.board[this.x + 1][this.y] instanceof Ant){
+
+		if(Main.isInBoard(this.x + 1, this.y) && Main.board[this.x + 1][this.y] instanceof Ant){
 			Main.moveOrganism(x, y, x + 1, y);
 		}
-		else if(Main.board[this.x - 1][this.y] instanceof Ant){
+		else if(Main.isInBoard(this.x - 1, this.y) && Main.board[this.x - 1][this.y] instanceof Ant){
 			Main.moveOrganism(x, y, x - 1, y);
 		}
-		else if(Main.board[this.x][this.y + 1] instanceof Ant){
+		else if(Main.isInBoard(this.x, this.y + 1) && Main.board[this.x][this.y + 1] instanceof Ant){
 			Main.moveOrganism(x, y, x, y + 1);
 		}
-		else if(Main.board[this.x][this.y - 1] instanceof Ant){
+		else if(Main.isInBoard(this.x, this.y - 1) && Main.board[this.x][this.y - 1] instanceof Ant){
 			Main.moveOrganism(x, y, x, y - 1);
 		}
 		else {

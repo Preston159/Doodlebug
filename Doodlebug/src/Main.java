@@ -70,7 +70,6 @@ public class Main {
 	public static void placeBugs() {
 		int randInt;
 		int randIntTwo;
-		int counter = 0;
 		
 		for(int i = 0; i < 100; i++) {
 			randInt = (int)(Math.random()*20);
