@@ -17,30 +17,36 @@ public class Doodlebug extends Organism {
 			move();
 		}
 		else if(Main.board[this.x + 1][this.y] instanceof Ant){
-			this.x+=1;
+			Main.move(x, y, x + 1, y);
 		}
 		else if(Main.board[this.x - 1][this.y] instanceof Ant){
-			this.x-=1;
+			Main.move(x, y, x - 1, y);
 		}
-		else if(Main.board[this.x][this.y+1] instanceof Ant){
-			this.y+=1;
+		else if(Main.board[this.x][this.y + 1] instanceof Ant){
+			Main.move(x, y, x, y + 1);
 		}
-		else if(Main.board[this.x][this.y-1] instanceof Ant){
-			this.y-=1;
+		else if(Main.board[this.x][this.y - 1] instanceof Ant){
+			Main.move(x, y, x, y - 1);
 		}
 		else {
-			this.x+=nx;
-			this.y+=ny;
+			Main.move(x, y, nx, ny);
 		}
 	}
 	
 	@Override
-	public Organism breed() {
+	public void breed() {
 		
-		return null;
 	}
 	
 	public int getX() { return x; }
 	public int getY() { return y; }
+	
+	public void setX(int x) {
+		this.x = x;
+	}
+	
+	public void setY(int y) {
+		this.y = y;
+	}
 	
 }

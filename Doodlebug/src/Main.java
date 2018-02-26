@@ -40,4 +40,13 @@ public class Main {
 		}
 	}
 	
+	public static void move(int fx, int fy, int tx, int ty) {
+		Organism o = board[fx][fy];
+		assert o.getX() == fx && o.getY() == fy;
+		board[fx][fy] = null;
+		o.setX(tx);
+		o.setY(ty);
+		board[tx][ty] = o;
+	}
+	
 }

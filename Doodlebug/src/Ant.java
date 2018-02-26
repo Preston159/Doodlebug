@@ -2,6 +2,7 @@
 public class Ant extends Organism {
 	
 	private int x, y;
+	private int alive = 0;
 	
 	public Ant(int x, int y) {
 		this.x = x;
@@ -15,18 +16,41 @@ public class Ant extends Organism {
 		int ny = y + direction[1];
 		Organism o = Main.board[nx][ny];
 		if(o == null && nx >= 0 && nx < 20 && ny >= 0 && ny < 20) {
-			x = nx;
-			y = ny;
+			Main.move(x, y, nx, ny);
+		}
+		if(alive++ >= 3) {
+			breed();
+			alive = 0;
 		}
 	}
 
 	@Override
-	public Organism breed() {
-		
-		return null;
+	public void breed() {
+		int[][] locations = new int[][] {
+				new int[] { -1, 0 },
+				new int[] { 1, 0 },
+				new int[] { 0, -1 },
+				new int[] { 0, 1}
+		};
+		for(int[] l : locations) {
+			int nx = x + l[0];
+			int ny = y + l[1];
+			if(Main.board[nx][ny] == null) {
+				Main.board[nx][ny] = new Ant(nx, ny);
+				break;
+			}
+		}
 	}
 	
 	public int getX() { return x; }
 	public int getY() { return y; }
+	
+	public void setX(int x) {
+		this.x = x;
+	}
+	
+	public void setY(int y) {
+		this.y = y;
+	}
 	
 }
