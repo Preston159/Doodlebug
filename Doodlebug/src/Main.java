@@ -10,12 +10,22 @@ public class Main {
 	
 	public static void main(String[] args) {
 		placeBugs();
+		step();
 		
 		
 	}
 	
 	public static void step() {
+		for(Organism[] r : board) {
+			for(Organism c : r) {
+				if(c != null){
+				c.move();
+				}
+				
+			}
 		
+		}
+		displayBoard();
 	}
 	
 	public static void displayBoard() {
@@ -70,11 +80,6 @@ public class Main {
 			randIntTwo = (int)(Math.random()*20);
 			board[randInt][randIntTwo] = new Doodlebug(randInt,randInt);
 		}
-		
-		
-		
-		
-		
 		displayBoard();
 	}
 	

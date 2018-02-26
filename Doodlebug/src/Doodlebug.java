@@ -14,8 +14,8 @@ public class Doodlebug extends Organism {
 		int[] direction = Main.getDirection();
 		int nx = this.x + direction[0];
 		int ny = this.y + direction[1];
-		if(nx < 0 || nx > 19 || ny < 0 || ny > 19) {
-			move();
+		if(nx-1 < 0 || nx+1 > 19 || ny-1 < 0 || ny+1 > 19) {
+			
 		}
 		else if(Main.board[this.x + 1][this.y] instanceof Ant){
 			Main.moveOrganism(x, y, x + 1, y);
