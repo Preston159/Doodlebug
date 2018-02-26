@@ -3,7 +3,7 @@ public class Main {
 	
 	static Organism[][] board = new Organism[20][];
 	static {
-		for(int i = 0;i < 20;i++) {
+		for(int i = 0; i < 20; i++) {
 			board[i] = new Organism[20];
 		}
 	}
