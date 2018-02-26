@@ -17,19 +17,19 @@ public class Doodlebug extends Organism {
 			move();
 		}
 		else if(Main.board[this.x + 1][this.y] instanceof Ant){
-			Main.move(x, y, x + 1, y);
+			Main.moveOrganism(x, y, x + 1, y);
 		}
 		else if(Main.board[this.x - 1][this.y] instanceof Ant){
-			Main.move(x, y, x - 1, y);
+			Main.moveOrganism(x, y, x - 1, y);
 		}
 		else if(Main.board[this.x][this.y + 1] instanceof Ant){
-			Main.move(x, y, x, y + 1);
+			Main.moveOrganism(x, y, x, y + 1);
 		}
 		else if(Main.board[this.x][this.y - 1] instanceof Ant){
-			Main.move(x, y, x, y - 1);
+			Main.moveOrganism(x, y, x, y - 1);
 		}
 		else {
-			Main.move(x, y, nx, ny);
+			Main.moveOrganism(x, y, nx, ny);
 		}
 	}
 	

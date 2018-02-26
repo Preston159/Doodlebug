@@ -16,7 +16,7 @@ public class Ant extends Organism {
 		int ny = y + direction[1];
 		Organism o = Main.board[nx][ny];
 		if(o == null && nx >= 0 && nx < 20 && ny >= 0 && ny < 20) {
-			Main.move(x, y, nx, ny);
+			Main.moveOrganism(x, y, nx, ny);
 		}
 		if(alive++ >= 3) {
 			breed();
