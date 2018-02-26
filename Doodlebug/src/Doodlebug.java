@@ -33,7 +33,9 @@ public class Doodlebug extends Organism {
 			Main.moveOrganism(x, y, nx, ny);
 		}
 		
-		age++;
+		if(age++ % 8 == 0) {
+			breed();
+		}
 	}
 	
 	@Override
