@@ -27,9 +27,15 @@ public class Main {
 			for(Organism o : oa) {
 				if(o == null)
 					continue;
+				o.move();
+			}
+		}
+		for(Organism[] oa : board) {
+			for(Organism o : oa) {
+				if(o == null)
+					continue;
 				if(o instanceof Ant)
 					ants++;
-				o.move();
 			}
 		}
 		return ants != 0;
