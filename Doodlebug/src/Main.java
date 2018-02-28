@@ -13,7 +13,6 @@ public class Main {
 		Scanner in = new Scanner(System.in);
 		placeBugs();
 		do {
-			displayBoard();
 			if(!step())
 				break;
 			System.out.println("Press enter to continue");
@@ -38,6 +37,7 @@ public class Main {
 					ants++;
 			}
 		}
+		displayBoard();
 		return ants != 0;
 	}
 	
