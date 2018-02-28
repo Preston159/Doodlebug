@@ -1,11 +1,12 @@
 import java.util.Scanner;
 
 public class Main {
+	final static int size = 20;
+	static Organism[][] board = new Organism[size][];
 	
-	static Organism[][] board = new Organism[20][];
 	static {
-		for(int i = 0; i < 20; i++) {
-			board[i] = new Organism[20];
+		for(int i = 0; i < size; i++) {
+			board[i] = new Organism[size];
 		}
 	}
 	
@@ -82,19 +83,19 @@ public class Main {
 		int randIntTwo;
 		
 		for(int i = 0; i < 100; i++) {
-			randInt = (int) (Math.random() * 20);
-			randIntTwo = (int) (Math.random() * 20);
+			randInt = (int) (Math.random() * size);
+			randIntTwo = (int) (Math.random() * size);
 			board[randInt][randIntTwo] = new Ant(randInt, randIntTwo);
 		}
-		for(int i = 0; i < 5; i++) {
-			randInt = (int) (Math.random() * 20);
-			randIntTwo = (int) (Math.random() * 20);
+		for(int i = 0; i < 1; i++) {
+			randInt = (int) (Math.random() * size);
+			randIntTwo = (int) (Math.random() * size);
 			board[randInt][randIntTwo] = new Doodlebug(randInt, randIntTwo);
 		}
 	}
 	
 	public static boolean isInBoard(int x, int y) {
-		return x >= 0 && x < 20 && y >= 0 && y < 20;
+		return x >= 0 && x < size && y >= 0 && y < size;
 	}
 	
 }
